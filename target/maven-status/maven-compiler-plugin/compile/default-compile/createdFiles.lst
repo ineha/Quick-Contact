@@ -1,0 +1,10 @@
+com\myproject\quickcontact\Controller\UserController.class
+com\myproject\quickcontact\config\CustomUserDetails.class
+com\myproject\quickcontact\config\UserDetailsServiceImpl.class
+com\myproject\quickcontact\Entities\User.class
+com\myproject\quickcontact\config\MyConfig.class
+com\myproject\quickcontact\Helper\Message.class
+com\myproject\quickcontact\dao\UserRepository.class
+com\myproject\quickcontact\Controller\HomeController.class
+com\myproject\quickcontact\SpringbootprojectApplication.class
+com\myproject\quickcontact\Entities\Contact.class

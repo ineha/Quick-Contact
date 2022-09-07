@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org" th:replace="base::Layout(~{::section})">
+<head>
+    <meta charset="UTF-8"/>
+    <title>this is home page</title>
+    <!--    <link rel="stylesheet" href="../static/CSS/login.css">-->
+</head>
+<body>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="mycard mt-2">
+
+                    <!--Alert-->
+                    <div th:if="${session.message}" th:classappend="${session.message.type}" class="alert" role="alert">
+                        <p th:text="${session.message.content}"></p>
+
+                        <th:block th:text="${#session.removeAttribute('message')}"></th:block>
+
+                    </div>
+
+                    <div class="container text-center">
+                        <img class="mx-auto" style="width: 70px" th:src="@{image/welcome.png}" alt="">
+                    </div>
+                    <h1 class="text-center">Welcome Back!!</h1>
+                    <form id="Login-form" class="form" th:action="@{/dologin}" action="#" method="post">
+                        <div th:if="${param.error}" class="alert alert-danger">
+                            Invalid Credentials
+                        </div>
+                        <!--name field-->
+                        <div class="form-group">
+                            <label for="username" class="form-label">User Name</label>
+                            <input type="text"
+                                   name="username"
+                                   id="username"
+                                   class="form-control"
+                                   placeholder="Enter here"
+                                   required>
+                            <!--                                   th:value="${user.name}"-->
+
+                        </div>
+
+
+
+
+                        <!--password field-->
+                        <div class="form-group">
+                            <label for="password" class="form-label">Your Password</label>
+                            <input type="password"
+                                   name="password"
+                                   id="password"
+                                   class="form-control"
+                                   placeholder="Enter here"
+                                   required
+                            >
+                        </div>
+
+                        <div class="m-3 container text-center">
+                            <p class="text-info">Not registered? <a href="/signup" class="text-decoration-none">Create an account</a></p>
+                        </div>
+
+                        <div class="m-3 container text-center">
+
+                            <button type="submit" class="btn bg-primary text-white">Login</button>
+
+                        </div>
+
+                    </form>
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+</body>
+
+
+</html>
