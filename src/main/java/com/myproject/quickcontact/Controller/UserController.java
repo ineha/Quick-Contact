@@ -42,6 +42,8 @@ public class UserController {
     because @ModelAttribute methods in a controller are invoked before @RequestMapping methods
     hence we can use it to add common data for each page
 
+    Model --> model object is used to send data from controller to view using  model.addAttribute(String Key,object value);
+ModelAndView ---> modelAndView object is used to send data from controller to view using model.addObject(String Key,object value);
      */
     @ModelAttribute
     public void addCommonData(Model model, Principal principal){
@@ -80,7 +82,8 @@ public class UserController {
 */
 
    /*
-   @RequestParam annotation -
+   @RequestParam annotation - single single field k information get krn k liye
+   @ModelAttribute -> ek sath sari fields get krn k liye, jo hmne enity class bnai h jaise contact to ye contact k fileds s map kr dega
 
 @ModelAttribute methods in a controller are invoked before @RequestMapping methods
 
@@ -90,6 +93,7 @@ public class UserController {
 @ModelAttribute on a method argument indicates the argument should be retrieved from the model.
 So in this case we expect that we have in the Model Contact object as key and we want to get its value and put it to
  the method argument Contact contact
+
     */
 
 
